@@ -30,3 +30,4 @@ model = tf.keras.models.load_model(path)
 prediction = model.predict(inputImg)
 
 print(prediction)
+print("Predicted value:", np.argmax(prediction))

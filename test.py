@@ -7,7 +7,7 @@ print(tf.__version__)
 
 #datasets, info = tfds.load(name='mnist', with_info=True, as_supervised=True)
 
-datasets, info = tfds.load('mnist', data_dir='data/', with_info=True, as_supervised=True)
+datasets, info = tfds.load('data', data_dir='data/', with_info=True, as_supervised=True, download=False)
 
 
 mnist_train, mnist_test = datasets['train'], datasets['test']

@@ -7,7 +7,7 @@ print(tf.__version__)
 
 #datasets, info = tfds.load(name='mnist', with_info=True, as_supervised=True)
 
-datasets, info = tfds.load('mnist', data_dir='data/', with_info=True, as_supervised=True, download=False)
+datasets, info = tfds.load('mnist:3.0.1', data_dir='./data', with_info=True, as_supervised=True, download=False)
 
 
 mnist_train, mnist_test = datasets['train'], datasets['test']
@@ -86,11 +86,3 @@ path = 'saved_model/'
 
 model.save(path, save_format='tf')
 
-with strategy.scope():
-  replicated_model = tf.keras.models.load_model(path)
-  replicated_model.compile(loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-                           optimizer=tf.keras.optimizers.Adam(),
-                           metrics=['accuracy'])
-
-  eval_loss, eval_acc = replicated_model.evaluate(eval_dataset)
-  print ('Eval loss: {}, Eval Accuracy: {}'.format(eval_loss, eval_acc))

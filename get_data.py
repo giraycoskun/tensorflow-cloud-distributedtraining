@@ -13,7 +13,7 @@ key_list = [
 for key in key_list:
     filename = key.split('/')[-1]
     s3.download_file(
-        Bucket="skyloop-artifacts", Key=f"{key}", Filename=f"data/mnist/0.0.1/{filename}"
+        Bucket="skyloop-artifacts", Key=f"{key}", Filename=f"data/mnist/3.0.1/{filename}"
     )
     print(key)
     #print(filename)

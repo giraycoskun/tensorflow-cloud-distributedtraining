@@ -10,7 +10,7 @@ import boto3
 s3 = boto3.client("s3")
 
 key = "mnsit/test/test.jpeg"
-filename = "data/predict/test.jpeg"
+filename = "data/mnist/predict/test.jpeg"
 
 s3.download_file(
         Bucket="skyloop-artifacts", Key=f"{key}", Filename=filename

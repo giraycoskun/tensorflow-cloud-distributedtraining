@@ -16,4 +16,4 @@ for key in key_list:
         Bucket="skyloop-artifacts", Key=f"{key}", Filename=f"data/{filename}"
     )
     print(key)
-    print(filename)
+    #print(filename)
